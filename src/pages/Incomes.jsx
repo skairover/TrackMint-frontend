@@ -76,9 +76,9 @@ const handleDeleteIncome = async (id) => {
    
     
      <Layout title="Incomes">
-    <div className='flex-1 text-black'>
+    
       
-      <main className="min-h-full bg-gray-200 relative px-4 py-6">
+      <main className="flex-1 text-black min-h-full bg-gray-200 relative px-4 py-6">
         {showForm &&(
             <div className="absolute inset-0 bg-black/40 flex justify-center items-center z-20">
           
@@ -119,7 +119,7 @@ const handleDeleteIncome = async (id) => {
           )}
         </section>
       </main>
-    </div>
+    
     </Layout>
     
   );
