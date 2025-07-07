@@ -111,16 +111,16 @@ function Profile() {
               (
               
                 <div className="flex h-screen w-screen overflow-hidden">
-                  <Sidebar />
+                  <Layout title="Profile" />
                   <div className="flex-1 flex flex-col text-black h-screen">
-                    <Header title="Profile" />
+                    
                     <main className="flex-1 bg-gray-200">
                       
                           <div className="w-full relative flex flex-col items-center">
                           <img src={horizon} alt="banner" className="w-full h-36 object-cover" />
                           <div className="absolute left-1/2 transform -translate-x-1/2 top-[7rem]">
                             <img
-                              src={user?.profilePic ? `=${baseURL}${user.profilePic}` : UserIcon}
+                              src={user?.profilePic ? `${baseURL}${user.profilePic}` : UserIcon}
                               className="w-32 h-32 rounded-full border-4 border-white shadow"
                             />
                           </div>
