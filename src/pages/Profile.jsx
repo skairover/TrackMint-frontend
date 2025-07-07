@@ -113,8 +113,7 @@ function Profile() {
                 />
                 <label
                   htmlFor="profileUpload"
-                  className="absolute bottom-0 right-0 bg-[#0B2027] text-white w-8 h-8 flex items-center justify-center rounded-full cursor-pointer hover:bg-[#305B69]"
-                >
+                  className="absolute -bottom-3 right-3 bg-[#0B2027] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#305B69] cursor-pointer"                  >
                   +
                 </label>
               </div>
@@ -122,8 +121,7 @@ function Profile() {
             </div>
 
             {/* Editable Profile Form */}
-            <div className="relative w-[90%] sm:w-[60%] lg:w-[20vw] mx-auto mt-20 flex flex-col items-center rounded-xl shadow bg-white p-4">
-              <input
+              <div className='mt-28 w-[90%] sm:w-[70%] md:w-[30%] flex flex-col items-center rounded-xl shadow bg-white p-4 mx-auto relative'>              <input
                 type="file"
                 id="profileUpload"
                 accept="image/*"
