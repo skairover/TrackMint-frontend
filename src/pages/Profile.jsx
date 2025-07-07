@@ -73,7 +73,7 @@ function Profile() {
           {readMode ?
               (
                 <div>
-                  <div className="flex h-screen w-screen overflow-hidden">
+                  
                     <Layout title="Profile" >
                     <div className="flex-1 flex flex-col text-black h-screen">
                       
@@ -103,15 +103,15 @@ function Profile() {
                       </main>
                     </div>
                     </Layout>
-                  </div>
+                  
                   
                 </div>
               )
               :
               (
               
-                <div className="flex h-screen w-screen overflow-hidden">
-                  <Layout title="Profile" />
+                
+                  <Layout title="Profile" >
                   <div className="flex-1 flex flex-col text-black h-screen">
                     
                     <main className="flex-1 bg-gray-200">
@@ -151,7 +151,8 @@ function Profile() {
                       </div>
                     </main>
                   </div>
-                </div>
+                  </Layout>
+                
               )
             }
           </div>
