@@ -106,11 +106,19 @@ function Profile() {
             <div className="w-full relative flex flex-col items-center">
               <img src={horizon} alt="banner" className="w-full h-36 object-cover" />
               <div className="absolute left-1/2 transform -translate-x-1/2 top-[7rem]">
+              <div className="relative w-32 h-32">
                 <img
                   src={user?.profilePic ? `${baseURL}${user.profilePic}` : UserIcon}
-                  className="w-32 h-32 rounded-full border-4 border-white shadow"
+                  className="w-full h-full rounded-full border-4 border-white shadow object-cover"
                 />
+                <label
+                  htmlFor="profileUpload"
+                  className="absolute bottom-0 right-0 bg-[#0B2027] text-white w-8 h-8 flex items-center justify-center rounded-full cursor-pointer hover:bg-[#305B69]"
+                >
+                  +
+                </label>
               </div>
+            </div>
             </div>
 
             {/* Editable Profile Form */}
@@ -123,13 +131,7 @@ function Profile() {
                 className="hidden"
               />
 
-              {/* Upload button (+) */}
-              <label
-                htmlFor="profileUpload"
-                className="absolute top-2 right-2 bg-[#0B2027] text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#305B69] cursor-pointer"
-              >
-                +
-              </label>
+              
 
               <input
                 type="text"
