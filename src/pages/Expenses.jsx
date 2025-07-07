@@ -60,10 +60,10 @@ function Expenses() {
      <Layout title="Expenses" >
      
         
-        <main className="flex-1 text-black min-h-full bg-gray-200 relative px-4 py-6">
+        <main className="flex-1 text-black min-h-full bg-gray-200 relative px-4 sm:px-6 py-6">
           {showForm && (
             <div className="absolute inset-0 bg-black/40 flex justify-center items-center z-20">
-              <div className="w-[30%] bg-white rounded-xl shadow-xl z-50">
+              <div className="w-[90%] md:w-[50%] lg:w-[30%] bg-white rounded-xl shadow-xl z-50">
                 <Form
                   type={'expense'}
                   onAdd={(expense) => {
@@ -84,7 +84,7 @@ function Expenses() {
 
           <button
             onClick={() => setShowForm(true)}
-            className="text-white font-black z-50 mb-6 mr-6 bg-[#40798C] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#305B69] rounded-full w-12 h-12 flex items-center justify-center fixed right-0 bottom-0"
+            className="text-white font-black z-50 mb-6 mr-6 bg-[#40798C] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#305B69] rounded-full w-12 h-12 flex items-center justify-center fixed right-4 bottom-4 sm:right-8 sm:bottom-8"
           >
             +
           </button>
@@ -97,7 +97,7 @@ function Expenses() {
                 {expenses.map((exp) => (
                   <li
                     key={exp._id}
-                    className="bg-white rounded p-3 mb-2 shadow border-red-500 border-r-4 flex justify-between items-center"
+                    className="bg-white rounded p-3 mb-2 shadow border-red-500 border-r-4 flexflex-col sm:flex-row sm:justify-between sm:items-center gap-2"
                   >
                     <span><strong>{exp.amount} {exp.currency}</strong> – {exp.category}</span>
                     <span className='font-light text-sm flex'>{String(day).padStart(2, '0')}-{String(month).padStart(2, '0')}-{year}<img src={deleteIcon}className='w-5 h-5 ml-3 cursor-pointer' onClick={()=>handleDeleteExpense(exp._id)}/></span>
