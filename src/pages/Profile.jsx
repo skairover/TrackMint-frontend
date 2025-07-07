@@ -120,7 +120,7 @@ function Profile() {
                           <img src={horizon} alt="banner" className="w-full h-36 object-cover" />
                           <div className="absolute left-1/2 transform -translate-x-1/2 top-[7rem]">
                             <img
-                              src={user?.profilePic ? `http://localhost:5000${user.profilePic}` : UserIcon}
+                              src={user?.profilePic ? `=${baseURL}${user.profilePic}` : UserIcon}
                               className="w-32 h-32 rounded-full border-4 border-white shadow"
                             />
                           </div>
