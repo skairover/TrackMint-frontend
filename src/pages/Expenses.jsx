@@ -56,11 +56,11 @@ function Expenses() {
 
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden">
+    
      <Layout title="Expenses" >
-      <div className='flex-1 text-black'>
+     
         
-        <main className="min-h-full bg-gray-200 relative px-4 py-6">
+        <main className="flex-1 text-black min-h-full bg-gray-200 relative px-4 py-6">
           {showForm && (
             <div className="absolute inset-0 bg-black/40 flex justify-center items-center z-20">
               <div className="w-[30%] bg-white rounded-xl shadow-xl z-50">
@@ -107,9 +107,9 @@ function Expenses() {
             )}
           </section>
         </main>
-      </div>
+      
       </Layout>
-    </div>
+    
   );
 }
 
