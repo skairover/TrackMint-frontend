@@ -74,7 +74,7 @@ const handleDeleteIncome = async (id) => {
 
   return (
    
-    <div className="flex h-screen w-screen overflow-hidden">
+    
      <Layout title="Incomes">
     <div className='flex-1 text-black'>
       
@@ -121,7 +121,7 @@ const handleDeleteIncome = async (id) => {
       </main>
     </div>
     </Layout>
-    </div>
+    
   );
   
 }
