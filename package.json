@@ -10,10 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.10",
+    "@tailwindcss/vite": "^4.1.11",
     "@vectopus/atlas-icons": "^0.0.7",
     "axios": "^1.9.0",
-    "navigate": "^0.3.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hot-toast": "^2.5.2",
@@ -31,7 +30,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
     "postcss": "^8.5.5",
-    "tailwindcss": "^4.1.10",
+    "tailwindcss": "^4.1.11",
     "vite": "^6.3.5"
   }
 }
