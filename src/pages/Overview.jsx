@@ -1,13 +1,17 @@
 import Layout from '../Components/Layout';
+import { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import axios from 'axios';
-import { useEffect, useState } from "react";
+
+const API = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE_URL,
+  withCredentials: true
+});
 
 function Overview() {
   const [totalIncome, setTotalIncome] = useState(0);
   const [totalExpense, setTotalExpense] = useState(0);
   const totalBalance = totalIncome - totalExpense;
-  const baseURL = import.meta.env.VITE_API_BASE_URL;
-
 
   useEffect(() => {
     fetchIncomes();
@@ -15,36 +19,46 @@ function Overview() {
   }, []);
 
   const fetchIncomes = async () => {
-    const res = await axios.get(`${baseURL}/api/incomes`, { withCredentials: true });
-    const total = res.data.reduce((acc, i) => acc + i.amount, 0);
-    setTotalIncome(total);
+    try {
+      const res = await API.get('/incomes');
+      const total = res.data.reduce((acc, i) => acc + i.amount, 0);
+      setTotalIncome(total);
+    } catch (err) {
+      toast.error('Failed to fetch incomes');
+      console.error(err);
+    }
   };
 
   const fetchExpenses = async () => {
-    const res = await axios.get(`${baseURL}/api/expenses`, { withCredentials: true });
-    const total = res.data.reduce((acc, e) => acc + e.amount, 0);
-    setTotalExpense(total);
+    try {
+      const res = await API.get('/expenses');
+      const total = res.data.reduce((acc, e) => acc + e.amount, 0);
+      setTotalExpense(total);
+    } catch (err) {
+      toast.error('Failed to fetch expenses');
+      console.error(err);
+    }
   };
 
   return (
     <Layout title="Overview">
       <section className="p-6">
-        <div className="flex w-full justify-between">
-          <div className="w-1/3 bg-[#546673] text-white mr-6 p-5 rounded-xl flex items-center">
+        <div className="flex flex-col md:flex-row w-full justify-between gap-4">
+          <div className="flex-1 bg-[#546673] text-white p-5 rounded-xl flex items-center justify-between">
             <span>
               total balance <br />
               <p className="text-3xl">{totalBalance.toFixed(2)}$</p>
             </span>
           </div>
 
-          <div className="w-1/3 bg-[#40798C] text-white mr-6 p-5 rounded-xl flex items-center">
+          <div className="flex-1 bg-[#40798C] text-white p-5 rounded-xl flex items-center justify-between">
             <span>
               expenses <br />
               <p className="text-3xl">{totalExpense.toFixed(2)}$</p>
             </span>
           </div>
 
-          <div className="w-1/3 bg-[#546673] text-white p-5 rounded-xl flex items-center">
+          <div className="flex-1 bg-[#546673] text-white p-5 rounded-xl flex items-center justify-between">
             <span>
               incomes <br />
               <p className="text-3xl">{totalIncome.toFixed(2)}$</p>
@@ -54,20 +68,16 @@ function Overview() {
       </section>
 
       <section className="p-6 pt-0">
-        <div className="h-[15rem] bg-[#F5F5F5] flex p-5 rounded-xl">
-          <ul>
-            <li>+500$: freelance</li>
-            <li>-100$: groceries</li>
-            <li>-290$: subscriptions</li>
-          </ul>
+        <div className="h-[15rem] bg-[#F5F5F5] flex p-5 rounded-xl justify-center items-center text-gray-500">
+          <p>Transaction list preview coming soon</p>
         </div>
 
         <div>
-          <button className="text-white rounded-xl mt-6 mr-6 bg-[#40798C] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#305B69] py-[0.6em] px-[1.2em]">
-            add expense
+          <button className="text-white rounded-xl mt-6 mr-4 bg-[#40798C] transition hover:-translate-y-1 hover:scale-105 hover:bg-[#305B69] py-2 px-4">
+            Add Expense
           </button>
-          <button className="text-white rounded-xl mt-6 mr-6 bg-[#40798C] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#305B69] py-[0.6em] px-[1.2em]">
-            add income
+          <button className="text-white rounded-xl mt-6 bg-[#40798C] transition hover:-translate-y-1 hover:scale-105 hover:bg-[#305B69] py-2 px-4">
+            Add Income
           </button>
         </div>
       </section>

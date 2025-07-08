@@ -10,16 +10,21 @@ function Register() {
   const [form, setForm] = useState({name:'', email:'', password:''});
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try{
-          await register(form)
-          toast.success('registered successfully')
-          navigate('/login');
-    }catch(err){
-    toast.error(err.response.data.message || err.response.data.error || 'Something went wrong');
-    }
+  e.preventDefault();
+  try {
+    const res = await register(form);
+    const token = res.data.token;
 
+    // Store JWT
+    localStorage.setItem('token', token);
+
+    toast.success('Registered successfully');
+    navigate('/');
+  } catch (err) {
+    toast.error(err.response?.data?.message || err.response?.data?.error || 'Something went wrong');
   }
+};
+
   const handleLogin = () => {
     navigate('/login')
   }

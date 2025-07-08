@@ -10,14 +10,23 @@ import deleteIcon from '../assets/delete.png'
 function Expenses() {
   const [showForm, setShowForm] = useState(false);
   const [expenses, setExpenses] = useState([]);
-  const year = new Date().getFullYear();
-  const month = new Date().getMonth() + 1;
-  const day = new Date().getDate();
+  const formatDate = (isoDate) => {
+  const date = new Date(isoDate);
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${day}-${month}-${year}`;
+};
   const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     fetchExpenses();
-  }, []);
+    if (showForm) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+  }, [showForm]);
 
   const fetchExpenses = async () => {
     try {
@@ -97,10 +106,10 @@ function Expenses() {
                 {expenses.map((exp) => (
                   <li
                     key={exp._id}
-                    className="bg-white rounded p-3 mb-2 shadow border-red-500 border-r-4 flexflex-col sm:flex-row sm:justify-between sm:items-center gap-2"
+                    className="bg-white rounded p-3 mb-2 shadow border-red-500 border-r-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2"
                   >
                     <span><strong>{exp.amount} {exp.currency}</strong> – {exp.category}</span>
-                    <span className='font-light text-sm flex'>{String(day).padStart(2, '0')}-{String(month).padStart(2, '0')}-{year}<img src={deleteIcon}className='w-5 h-5 ml-3 cursor-pointer' onClick={()=>handleDeleteExpense(exp._id)}/></span>
+                    <span className='font-light text-sm flex'> {formatDate(exp.createdAt)}<img src={deleteIcon}className='w-5 h-5 ml-3 cursor-pointer' onClick={()=>handleDeleteExpense(exp._id)}/></span>
                   </li>
                 ))}
               </ul>

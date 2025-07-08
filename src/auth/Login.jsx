@@ -11,16 +11,19 @@ function Login() {
  const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    // eslint-disable-next-line no-unused-vars
-    const res = await login(form); // capture the response
+    const res = await login(form); // res.data should contain the token
+    const token = res.data.token;
+
+    // Store token in localStorage
+    localStorage.setItem('token', token);
+
     toast.success('Logged in successfully');
     navigate('/');
   } catch (err) {
     const msg = err.response?.data?.error || 'Login failed. Try again.';
-    toast.error(msg)
+    toast.error(msg);
   }
-
-  }
+};
   const handleRegister = () => {
     navigate('/register')
   }
