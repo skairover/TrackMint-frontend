@@ -3,12 +3,7 @@ import Layout from '../Components/Layout';
 import Form from '../Components/Form';
 import toast from 'react-hot-toast';
 import deleteIcon from '../assets/delete.png';
-import axios from 'axios';
-
-const API = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
-  withCredentials: true,
-});
+import { getIncomes, createIncome, deleteIncome } from '../services/incomeService';
 
 function Incomes() {
   const [showForm, setShowForm] = useState(false);
@@ -24,7 +19,7 @@ function Incomes() {
 
   const fetchIncomes = async () => {
     try {
-      const res = await API.get('/incomes');
+      const res = await getIncomes();
       setIncomes(res.data);
     } catch (err) {
       console.error("Fetch failed", err.response?.data || err.message);
@@ -34,7 +29,7 @@ function Incomes() {
 
   const handleAddIncome = async (income) => {
     try {
-      const res = await API.post('/incomes', income);
+      const res = await createIncome(income);
       setIncomes((prev) => [...prev, res.data]);
     } catch (err) {
       console.error("Add income error:", err.response?.data || err.message);
@@ -44,7 +39,7 @@ function Incomes() {
 
   const handleDeleteIncome = async (id) => {
     try {
-      await API.delete(`/incomes/${id}`);
+      await deleteIncome(id);
       setIncomes((prev) => prev.filter((inc) => inc._id !== id));
       toast.success('Income deleted');
     } catch (err) {

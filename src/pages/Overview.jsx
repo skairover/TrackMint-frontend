@@ -1,16 +1,12 @@
-import Layout from '../Components/Layout';
 import { useEffect, useState } from 'react';
+import Layout from '../Components/Layout';
 import toast from 'react-hot-toast';
-import axios from 'axios';
-
-const API = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
-  withCredentials: true
-});
+import api from '../services/api'; // ✅ centralized axios instance with JWT
 
 function Overview() {
   const [totalIncome, setTotalIncome] = useState(0);
   const [totalExpense, setTotalExpense] = useState(0);
+
   const totalBalance = totalIncome - totalExpense;
 
   useEffect(() => {
@@ -20,23 +16,23 @@ function Overview() {
 
   const fetchIncomes = async () => {
     try {
-      const res = await API.get('/incomes');
+      const res = await api.get('/api/incomes');
       const total = res.data.reduce((acc, i) => acc + i.amount, 0);
       setTotalIncome(total);
     } catch (err) {
       toast.error('Failed to fetch incomes');
-      console.error(err);
+      console.error('Income fetch error:', err);
     }
   };
 
   const fetchExpenses = async () => {
     try {
-      const res = await API.get('/expenses');
+      const res = await api.get('/api/expenses');
       const total = res.data.reduce((acc, e) => acc + e.amount, 0);
       setTotalExpense(total);
     } catch (err) {
       toast.error('Failed to fetch expenses');
-      console.error(err);
+      console.error('Expense fetch error:', err);
     }
   };
 

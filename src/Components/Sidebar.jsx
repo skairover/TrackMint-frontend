@@ -5,22 +5,17 @@ import ProfileIcon from './Icons/ProfileIcon';
 import ExitIcon from './Icons/ExitIcon';
 import wallet from '../assets/wallet-filled-money-tool.png';
 import SettingsIcon from './Icons/SettingsIcon';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const navigate = useNavigate();
-  const baseURL = import.meta.env.VITE_API_BASE_URL;
-  const handleLogout = async () => {
-    try {
-      await axios.post(`${baseURL}/api/auth/logout`, {}, { withCredentials: true });
-      navigate('/login');
-    } catch (err) {
-      console.error('Logout failed', err.response?.data || err.message);
-      toast.error('Logout failed');
-    }
-  };
+ const handleLogout = () => {
+  localStorage.removeItem('token');   // Clear JWT
+  toast.success('Logged out successfully');
+  navigate('/login');                 // Redirect to login
+};
 
   return (
     <>
@@ -42,26 +37,26 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           </div>
 
           <nav className="space-y-5 flex-1">
-            <a href="/" className="flex items-center hover:text-gray-300">
+            <Link to="/" className="flex items-center hover:text-gray-300">
               <HouseRealEstate className="mr-3" />
               <span>Overview</span>
-            </a>
-            <a href="/expenses" className="flex items-center hover:text-gray-300">
-              <ExpensesIcon className="mr-3" />
+            </Link>
+            <Link to="/expenses" className="flex items-center hover:text-gray-300">
+              <HouseRealEstate className="mr-3" />
               <span>Expenses</span>
-            </a>
-            <a href="/incomes" className="flex items-center hover:text-gray-300">
-              <IncomeIcon className="mr-3" />
+            </Link>
+            <Link to="/incomes" className="flex items-center hover:text-gray-300">
+              <HouseRealEstate className="mr-3" />
               <span>Incomes</span>
-            </a>
-            <a href="/profile" className="flex items-center hover:text-gray-300">
-              <ProfileIcon className="mr-3" />
+            </Link>
+            <Link to="/profile" className="flex items-center hover:text-gray-300">
+              <HouseRealEstate className="mr-3" />
               <span>Profile</span>
-            </a>
-            <a href="/settings" className="flex items-center hover:text-gray-300">
-              <SettingsIcon className="mr-3" />
+            </Link>
+            <Link to="/settings" className="flex items-center hover:text-gray-300">
+              <HouseRealEstate className="mr-3" />
               <span>Settings</span>
-            </a>
+            </Link>
           </nav>
 
           <button onClick={handleLogout} className="flex items-center hover:text-red-400 mt-auto">

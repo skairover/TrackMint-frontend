@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
+import { deleteExpense } from '../services/expenseService';
 import Layout from '../Components/Layout';
 
 import Form from '../Components/Form';
 import toast from 'react-hot-toast';
 import { getExpenses, createExpense } from '../services/expenseService';
-import axios from 'axios'
+
 import deleteIcon from '../assets/delete.png'
 
 function Expenses() {
@@ -17,7 +18,7 @@ function Expenses() {
   const year = date.getFullYear();
   return `${day}-${month}-${year}`;
 };
-  const baseURL = import.meta.env.VITE_API_BASE_URL;
+ 
 
   useEffect(() => {
     fetchExpenses();
@@ -38,7 +39,7 @@ function Expenses() {
     }
   };
 
-  const handleAddExpence = async (expense) => {
+  const handleAddExpense = async (expense) => {
     try {
       const newExpense = await createExpense(expense);
       setExpenses(prev => [...prev, newExpense]);
@@ -51,9 +52,7 @@ function Expenses() {
 
   const handleDeleteExpense = async (id) => {
   try {
-    await axios.delete(`${baseURL}/api/expenses/${id}`, {
-      withCredentials: true
-    });
+    await deleteExpense(id);
     setExpenses(expenses.filter((exp) => exp._id !== id));
     toast.success('Expense deleted');
   } catch (err) {
@@ -76,7 +75,7 @@ function Expenses() {
                 <Form
                   type={'expense'}
                   onAdd={(expense) => {
-                    handleAddExpence(expense);
+                    handleAddExpense(expense);
                     setShowForm(false);
                   }}
                 />
