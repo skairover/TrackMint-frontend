@@ -16,7 +16,7 @@ function Login() {
       localStorage.setItem('token', token);
 
       toast.success('Logged in successfully');
-      navigate('/');
+      navigate('/overview');
     } catch (err) {
       const msg = err.response?.data?.error || 'Login failed. Try again.';
       toast.error(msg);

@@ -19,7 +19,7 @@ function Register() {
     localStorage.setItem('token', token);
 
     toast.success('Registered successfully');
-    navigate('/');
+    navigate('/overview');
   } catch (err) {
     toast.error(err.response?.data?.message || err.response?.data?.error || 'Something went wrong');
   }
