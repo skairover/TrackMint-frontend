@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Register from "./auth/Register";
+import Home from "./pages/Home"
 import Overview from "./pages/Overview";
 import Login from "./auth/Login"
 import Profile from "./pages/Profile"
@@ -14,7 +15,8 @@ function App() {
   <BrowserRouter>
    <Toaster position="top-center" />
       <Routes>
-        <Route path="/" element={<Overview />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/overview" element={<Overview />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile/>}/>
