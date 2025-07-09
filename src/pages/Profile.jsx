@@ -5,7 +5,7 @@ import UserIcon from '../assets/user.png';
 import horizon from '../assets/horizon.jpg';
 import toast from 'react-hot-toast';
 
-import { getProfile, updateProfile, uploadProfilePic } from '../services/profileService';
+import { getProfile, updateProfile, uploadProfilePic } from '../services/profileServices';
 
 function Profile() {
   const [user, setUser] = useState(null);
