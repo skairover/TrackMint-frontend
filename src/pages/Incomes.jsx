@@ -18,19 +18,21 @@ function Incomes() {
   }, [showForm]);
 
   const fetchIncomes = async () => {
-    try {
-      const res = await getIncomes();
-      setIncomes(res.data);
-    } catch (err) {
-      console.error("Fetch failed", err.response?.data || err.message);
-      toast.error('Failed to fetch incomes');
-    }
-  };
+  try {
+    const data = await getIncomes();
+    if (!Array.isArray(data)) throw new Error('Expected array but got ' + typeof data);
+    setIncomes(data);
+  } catch (err) {
+    console.error('Error fetching incomes:', err.message || err);
+    toast.error('Failed to load incomes');
+  }
+};
+
 
   const handleAddIncome = async (income) => {
     try {
-      const res = await createIncome(income);
-      setIncomes((prev) => [...prev, res.data]);
+      const newIncome = await createIncome(income);
+      setIncomes((prev) => [...prev, newIncome]);
     } catch (err) {
       console.error("Add income error:", err.response?.data || err.message);
       toast.error("Failed to add income");

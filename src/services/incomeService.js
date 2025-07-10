@@ -9,7 +9,7 @@ export const getIncomes = async () => {
 
 // ✅ Create a new expense
 export const createIncome = async (incomeData) => {
-  const res = await api.post('/api/expenses', incomeData);
+  const res = await api.post('/api/incomes', incomeData);
   return res.data; // Return the created expense object
 };
 
