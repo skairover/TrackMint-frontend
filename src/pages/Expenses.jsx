@@ -29,15 +29,16 @@ function Expenses() {
   }
   }, [showForm]);
 
-  const fetchExpenses = async () => {
-    try {
-      const data = await getExpenses();
-      setExpenses(data);
-    } catch (err) {
-      console.error("Fetch failed", err.message || err);
-      toast.error('Failed to fetch expenses');
-    }
-  };
+ const fetchExpenses = async () => {
+  try {
+    const data = await getExpenses();
+    if (!Array.isArray(data)) throw new Error("Expected array, got " + typeof data);
+    setExpenses(data);
+  } catch (err) {
+    console.error("Fetch failed", err.message || err);
+    toast.error('Failed to fetch expenses');
+  }
+};
 
   const handleAddExpense = async (expense) => {
     try {
