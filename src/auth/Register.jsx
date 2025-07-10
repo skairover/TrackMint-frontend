@@ -6,7 +6,6 @@ import AuthLayout from '../Components/AuthLayout';
 
 function Register() {
   const navigate = useNavigate();
-  const baseURL = import.meta.env.VITE_API_BASE_URL;
   const [form, setForm] = useState({name:'', email:'', password:''});
 
   const handleSubmit = async (e) => {
@@ -31,45 +30,40 @@ function Register() {
   return (
     <AuthLayout>
     <div>
-        <div>
-            <h1>Register</h1>
+        <div className='flex flex-col items-center  justify-center'>
+            <h1 className='text-black font-bold mb-8'>Register</h1>
             <div>
-                <form onSubmit={handleSubmit}>
-                    <p>user name</p>
+                <form onSubmit={handleSubmit} className='text-black'>
+                    <p>name</p>
                     <input type="text"
                       name='name'
                       placeholder='name' 
                       autoComplete='off'
-                      onChange={(e)=>setForm({...form, name:e.target.value})}/>
+                      onChange={(e)=>setForm({...form, name:e.target.value})}
+                      className='bg-gray-300 px-3 py-2 rounded mb-3 hover:bg-gray-200 outline-none font-semibold min-w-100 transition duration-300 '
+                      />
 
                     <p>email</p>
                     <input type="email" 
                       name='Register_email' 
                       placeholder='example@gmail.com' 
                       autoComplete='new-email'
-                      onChange={(e)=>setForm({...form, email:e.target.value})}/>
+                      onChange={(e)=>setForm({...form, email:e.target.value})}
+                      className='bg-gray-300 px-3 py-2 rounded mb-3 hover:bg-gray-200 outline-none font-semibold min-w-100 transition duration-300'/>
 
                     <p>password</p>
                     <input type="password" 
                       name='Register_password' 
                       placeholder='minimun 8 characters' 
                       autoComplete='new-password'
-                      onChange={(e)=>setForm({...form, password:e.target.value})}/>
+                      onChange={(e)=>setForm({...form, password:e.target.value})}
+                      className='bg-gray-300 px-3 py-2 rounded mb-3 hover:bg-gray-200 outline-none font-semibold min-w-100 transition duration-300'/><br/>
 
-                    <button type='submit' >Sign up</button>
-                    <p>already have an account? <a onClick={handleLogin}>login</a></p>
+                    <button type='submit' className='flex items-center justify-center text-white rounded-xl my-3 min-w-100 bg-[#0B2027] hover:bg-[#173f4f] py-2 px-4 transition duration-300 ' >Sign up</button>
+                    <p>already have an account?  <span><a onClick={handleLogin} className=' hover:text-green-800 font-bold hover:underline'> login</a></span></p>
                  
                 </form>
-                <p className="my-2 text-center text-sm text-gray-500">OR</p>
-
-                <hr />
-                <button
-                  type="button"
-                  onClick={() => window.location.href = `${baseURL}/api/auth/google`}
-                  className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
-                >
-                  Sign up with Google
-                </button>
+                
 
             </div>
         </div>
