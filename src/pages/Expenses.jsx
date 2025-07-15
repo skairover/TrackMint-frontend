@@ -5,8 +5,7 @@ import Layout from '../Components/Layout';
 import Form from '../Components/Form';
 import toast from 'react-hot-toast';
 import { getExpenses, createExpense } from '../services/expenseService';
-
-import deleteIcon from '../assets/delete.png'
+import { AiOutlineDelete } from "react-icons/ai";
 
 function Expenses() {
   const [showForm, setShowForm] = useState(false);
@@ -108,8 +107,15 @@ function Expenses() {
                     key={exp._id}
                     className="bg-white rounded p-3 mb-2 shadow border-red-500 border-r-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2"
                   >
-                    <span><strong>{exp.amount} {exp.currency}</strong> – {exp.category}</span>
-                    <span className='font-light text-sm flex'> {formatDate(exp.createdAt)}<img src={deleteIcon}className='w-5 h-5 ml-3 cursor-pointer' onClick={()=>handleDeleteExpense(exp._id)}/></span>
+                    <span>
+                      <p className='bg-red-300 w-20 text-red-900 rounded-xl px-2 py-1 flex justify-center items-center text-xs'>{exp.category}</p>
+                      <strong>{exp.amount} {exp.currency}</strong>
+                    </span>
+                    <span className='font-light text-sm flex'> 
+                      {formatDate(exp.createdAt)}
+                      <AiOutlineDelete className= 'w-9 h-9 ml-3 cursor-pointer hover:bg-red-200 transition delay-150 duration-300 ease-in-out rounded-xl p-2'
+                        onClick={()=>handleDeleteExpense(exp._id)}/>
+                    </span>
                   </li>
                 ))}
               </ul>

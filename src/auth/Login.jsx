@@ -31,36 +31,50 @@ function Login() {
   return (
     
     <AuthLayout>
-      <div className='flex flex-col items-center text-black  justify-center'>
-        <h1 className='text-black font-bold mb-8'>Login</h1>
-        <form onSubmit={handleSubmit}>
-          <p>Email</p>
-          <input
-            type="email"
-            name="email"
-            placeholder="example@gmail.com"
-            autoComplete="email"
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className='bg-gray-300 px-3 py-2 rounded mb-3 hover:bg-gray-200 outline-none font-semibold min-w-100 transition duration-300 '
+      <div className="min-h-screen flex items-center justify-center px-4 bg-[#FDFFFD] text-black">
+        <div className="w-full max-w-sm bg-white p-6 rounded-xl shadow-lg">
+          <h1 className="text-2xl font-bold text-center mb-6">Login</h1>
+          <form onSubmit={handleSubmit}>
+            <label className="block mb-2 font-medium">Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="example@gmail.com"
+              autoComplete="email"
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              className="w-full bg-gray-200 px-3 py-2 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-[#0B2027] transition duration-300"
+            />
 
-          />
+            <label className="block mb-2 font-medium">Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Minimum 8 characters"
+              autoComplete="current-password"
+              onChange={(e) => setForm({ ...form, password: e.target.value })}
+              className="w-full bg-gray-200 px-3 py-2 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-[#0B2027] transition duration-300"
+            />
 
-          <p>Password</p>
-          <input
-            type="password"
-            name="password"
-            placeholder="Minimum 8 characters"
-            autoComplete="current-password"
-            onChange={(e) => setForm({ ...form, password: e.target.value })}
-            className='bg-gray-300 px-3 py-2 rounded mb-3 hover:bg-gray-200 outline-none font-semibold min-w-100 transition duration-300 '
-          />
+            <button
+              type="submit"
+              className="w-full bg-[#0B2027] text-white py-2 rounded-lg hover:bg-[#173f4f] transition duration-300 font-semibold"
+            >
+              Login
+            </button>
 
-          <button type="submit" className='flex items-center justify-center text-white rounded-xl my-3 min-w-100 bg-[#0B2027] hover:bg-[#173f4f] py-2 px-4 transition duration-300 '>Login</button>
-          <p>
-            Don't have an account? <a onClick={handleRegister} className=' hover:text-green-800 font-bold hover:underline'>Sign up</a>
-          </p>
-        </form>
+            <p className="text-center mt-4 text-sm">
+              Don’t have an account?
+              <span
+                onClick={handleRegister}
+                className="text-green-700 font-semibold ml-1 cursor-pointer hover:underline"
+              >
+                Sign up
+              </span>
+            </p>
+          </form>
+        </div>
       </div>
+
     </AuthLayout>
   );
 }

@@ -9,7 +9,7 @@ export default defineConfig({
       '/api': 'http://localhost:5000',
     },
     fs: {
-      allow: ['public']
+      allow: ['src', 'public']
     }
   },
   build: {
