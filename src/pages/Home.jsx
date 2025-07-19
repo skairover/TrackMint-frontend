@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import My3DComponent from '../Components/My3dComponenet';
+import LazySpline3D from '../Components/LazySpline3D';
 
 const Home = () => {
   return (
@@ -27,7 +27,10 @@ const Home = () => {
     {/* Main takes remaining height */}
     <main className="flex-1 relative overflow-hidden z-0 bg-[#121212]">
         <div className="absolute inset-0 z-[-5]" />
-        <My3DComponent/>
+        
+          <LazySpline3D/>
+        
+        
         <section className="flex flex-col items-center justify-center h-full w-full">
         <div className="flex flex-col items-center justify-between h-[25rem]">
             <div className="text-center">

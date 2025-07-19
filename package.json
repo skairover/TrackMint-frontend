@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^10.5.1",
+    "@react-three/fiber": "^9.2.0",
     "@splinetool/react-spline": "^4.1.0",
     "@tailwindcss/vite": "^4.1.11",
     "@vectopus/atlas-icons": "^0.0.7",
@@ -18,7 +20,9 @@
     "react-dom": "^19.1.0",
     "react-hot-toast": "^2.5.2",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.6.2"
+    "react-intersection-observer": "^9.16.0",
+    "react-router-dom": "^7.6.2",
+    "three": "^0.178.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
