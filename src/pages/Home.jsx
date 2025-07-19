@@ -13,13 +13,13 @@ const Home = () => {
           to="/login"
           className="flex items-center justify-center text-black dark:text-white rounded-xl border-2 border-[#48C072] hover:border-[#39995A] py-2 px-6 mx-3 transition duration-300"
         >
-          <span>Login</span>
+          <span>LogIn</span>
         </Link>
         <Link
           to="/register"
           className="flex items-center justify-center text-white font-semibold dark:text-black rounded-xl bg-[#48C072] hover:bg-[#39995A] py-2 px-4 transition duration-300"
         >
-          <span>Sign up</span>
+          <span>SignUp</span>
         </Link>
       </nav>
     </header>
