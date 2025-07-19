@@ -30,52 +30,54 @@ function Login() {
 
   return (
     
-    <AuthLayout>
-      <div className="min-h-screen flex items-center justify-center px-4 bg-[#FDFFFD] text-black">
-        <div className="w-full max-w-sm bg-white p-6 rounded-xl shadow-lg">
-          <h1 className="text-2xl font-bold text-center mb-6">Login</h1>
-          <form onSubmit={handleSubmit}>
-            <label className="block mb-2 font-medium">Email</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="example@gmail.com"
-              autoComplete="email"
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="w-full bg-gray-200 px-3 py-2 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-[#0B2027] transition duration-300"
-            />
+<AuthLayout>
+  <div className="h-full flex items-center justify-center px-4 bg-white dark:bg-[#121212] text-black dark:text-white">
+    <div className="w-full  max-w-md p-6 rounded-lg shadow-md">
+      <h1 className="text-2xl font-bold text-center mb-6">Login</h1>
 
-            <label className="block mb-2 font-medium">Password</label>
-            <input
-              type="password"
-              name="password"
-              placeholder="Minimum 8 characters"
-              autoComplete="current-password"
-              onChange={(e) => setForm({ ...form, password: e.target.value })}
-              className="w-full bg-gray-200 px-3 py-2 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-[#0B2027] transition duration-300"
-            />
+      <form onSubmit={handleSubmit}>
+        <label className="block mb-2 font-semibold">Email</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="example@gmail.com"
+          autoComplete="email"
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
+          className="w-full bg-gray-200 hover:bg-gray-300 dark:text-black px-3 py-2 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-[#0B2027] transition duration-300"
+        />
 
-            <button
-              type="submit"
-              className="w-full bg-[#0B2027] text-white py-2 rounded-lg hover:bg-[#173f4f] transition duration-300 font-semibold"
-            >
-              Login
-            </button>
+        <label className="block mb-2 font-semibold">Password</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="Minimum 8 characters"
+          autoComplete="current-password"
+          onChange={(e) => setForm({ ...form, password: e.target.value })}
+          className="w-full bg-gray-200 hover:bg-gray-300 dark:hover:bg-gray-300 dark:text-black px-3 py-2 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-[#0B2027] transition duration-300"
+        />
 
-            <p className="text-center mt-4 text-sm">
-              Don’t have an account?
-              <span
-                onClick={handleRegister}
-                className="text-green-700 font-semibold ml-1 cursor-pointer hover:underline"
-              >
-                Sign up
-              </span>
-            </p>
-          </form>
-        </div>
-      </div>
+        <button
+          type="submit"
+          className="w-full bg-[#0B2027] dark:bg-[#48C072] dark:hover:bg-[#6ecd8f] dark:text-black text-white py-2 rounded-lg hover:bg-[#173f4f] transition duration-300 font-semibold"
+        >
+          Login
+        </button>
 
-    </AuthLayout>
+        <p className="text-center mt-4 text-sm">
+          Don’t have an account?
+          <span
+            onClick={handleRegister}
+            className="text-green-700 dark:text-[#48C072] font-semibold ml-1 cursor-pointer hover:underline"
+          >
+            Sign up
+          </span>
+        </p>
+      </form>
+    </div>
+  </div>
+</AuthLayout>
+
+
   );
 }
 

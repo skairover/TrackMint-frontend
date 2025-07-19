@@ -109,7 +109,7 @@ function Expenses() {
                   >
                     <span>
                       <p className='bg-red-300 w-20 text-red-900 rounded-xl px-2 py-1 flex justify-center items-center text-xs'>{exp.category}</p>
-                      <strong>{exp.amount} {exp.currency}</strong>
+                      <strong className='ml-1'>{exp.amount} {exp.currency}</strong>
                     </span>
                     <span className='font-light text-sm flex'> 
                       {formatDate(exp.createdAt)}

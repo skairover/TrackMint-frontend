@@ -28,49 +28,63 @@ function Register() {
     navigate('/login')
   }
   return (
-    <AuthLayout>
-    <div>
-        <div className='flex flex-col items-center  justify-center'>
-            <h1 className='text-black font-bold mb-8'>Register</h1>
-            <div>
-                <form onSubmit={handleSubmit} className='text-black'>
-                    <p>name</p>
-                    <input type="text"
-                      name='name'
-                      placeholder='name' 
-                      autoComplete='off'
-                      onChange={(e)=>setForm({...form, name:e.target.value})}
-                      className='bg-gray-300 px-3 py-2 rounded mb-3 hover:bg-gray-200 outline-none font-semibold min-w-100 transition duration-300 '
-                      />
+<AuthLayout>
+  <div className="w-full  max-w-md bg-white p-6 rounded-lg shadow-md dark:bg-[#121212]">
+    <h1 className="text-black dark:text-white text-2xl font-bold mb-6 text-center">Register</h1>
 
-                    <p>email</p>
-                    <input type="email" 
-                      name='Register_email' 
-                      placeholder='example@gmail.com' 
-                      autoComplete='new-email'
-                      onChange={(e)=>setForm({...form, email:e.target.value})}
-                      className='bg-gray-300 px-3 py-2 rounded mb-3 hover:bg-gray-200 outline-none font-semibold min-w-100 transition duration-300'/>
+    <form onSubmit={handleSubmit} className="text-black dark:text-white">
+      <label className="block mb-2 font-semibold">Name</label>
+      <input
+        type="text"
+        name="name"
+        placeholder="name"
+        autoComplete="off"
+        onChange={(e) => setForm({ ...form, name: e.target.value })}
+        className="w-full bg-gray-200 text-black px-3 py-2 rounded mb-4 outline-none focus:ring-2 focus:ring-blue-500 transition hover:bg-gray-300 dark:hover:bg-gray-300"
+      />
 
-                    <p>password</p>
-                    <input type="password" 
-                      name='Register_password' 
-                      placeholder='minimun 8 characters' 
-                      autoComplete='new-password'
-                      onChange={(e)=>setForm({...form, password:e.target.value})}
-                      className='bg-gray-300 px-3 py-2 rounded mb-3 hover:bg-gray-200 outline-none font-semibold min-w-100 transition duration-300'/><br/>
+      <label className="block mb-2 font-semibold">Email</label>
+      <input
+        type="email"
+        name="Register_email"
+        placeholder="example@gmail.com"
+        autoComplete="new-email"
+        onChange={(e) => setForm({ ...form, email: e.target.value })}
+        className="w-full bg-gray-200 text-black px-3 py-2 rounded mb-4 outline-none focus:ring-2 focus:ring-blue-500 transition hover:bg-gray-300 dark:hover:bg-gray-300"
+      />
 
-                    <button type='submit' className='flex items-center justify-center text-white rounded-xl my-3 min-w-100 bg-[#0B2027] hover:bg-[#173f4f] py-2 px-4 transition duration-300 ' >Sign up</button>
-                    <p>already have an account?  <span><a onClick={handleLogin} className=' hover:text-green-800 font-bold hover:underline'> login</a></span></p>
-                 
-                </form>
-                
+      <label className="block mb-2 font-semibold">Password</label>
+      <input
+        type="password"
+        name="Register_password"
+        placeholder="minimum 8 characters"
+        autoComplete="new-password"
+        onChange={(e) => setForm({ ...form, password: e.target.value })}
+        className="w-full bg-gray-200 text-black px-3 py-2 rounded mb-4 outline-none focus:ring-2 focus:ring-blue-500 transition hover:bg-gray-300 dark:hover:bg-gray-300"
+      />
 
-            </div>
-        </div>
+      <button className="w-full bg-[#40798C] dark:hover:bg-[#6ecd8f] text-white dark:text-black py-2 rounded-lg hover:bg-[#2C5D66] dark:bg-[#48C072] dark:hover:bg-[#3D7D85] transition duration-300 font-semibold">
+        Sign Up
+      </button>
 
-    </div>
-    </AuthLayout>
-  );
+      <p className="mt-4 text-center">
+        Already have an account?{' '}
+        <a
+          onClick={handleLogin}
+          className="text-[#48C072] font-semibold ml-1 cursor-pointer hover:underline"
+        >
+          Login
+        </a>
+      </p>
+    </form>
+  </div>
+</AuthLayout>
+
+
+
+);
+
+
 }
 
 export default Register;
