@@ -11,7 +11,7 @@ function Layout({ title, children }) {
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <div className="flex-1 flex flex-col text-black h-screen">
         <Header title={title} setSidebarOpen={setSidebarOpen} />
-        <main className="flex-1 bg-gray-200 overflow-y-auto">{children}</main>
+        <main className="flex-1 bg-gray-200 dark:bg-[#121212] overflow-y-auto">{children}</main>
       </div>
     </div>
   );

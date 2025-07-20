@@ -39,7 +39,7 @@ function Overview() {
   return (
     <Layout title="Overview">
       <section className="p-6">
-        <div className="flex flex-col md:flex-row w-full justify-between gap-4">
+        <div className="flex flex-col md:flex-row w-full justify-between gap-4 ">
           <div className="flex-1 bg-[#546673] text-white p-5 rounded-xl flex items-center justify-between">
             <span>
               total balance <br />
@@ -64,7 +64,7 @@ function Overview() {
       </section>
 
       <section className="p-6 pt-0">
-        <div className="h-[15rem] bg-[#F5F5F5] flex p-5 rounded-xl justify-center items-center text-gray-500">
+        <div className="h-[15rem] bg-[#F5F5F5] dark:bg-[#181818] flex p-5 rounded-xl justify-center items-center text-gray-500">
           <p>Transaction list preview coming soon</p>
         </div>
 

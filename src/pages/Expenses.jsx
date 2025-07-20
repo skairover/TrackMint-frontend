@@ -68,10 +68,10 @@ function Expenses() {
      <Layout title="Expenses" >
      
         
-        <main className="flex-1 text-black min-h-full bg-gray-200 relative px-4 sm:px-6 py-6">
+        <main className="flex-1 text-black dark:text-white min-h-full bg-gray-200 dark:bg-[#121212] relative px-4 sm:px-6 py-6">
           {showForm && (
-            <div className="absolute inset-0 bg-black/40 flex justify-center items-center z-20">
-              <div className="w-[90%] md:w-[50%] lg:w-[30%] bg-white rounded-xl shadow-xl z-50">
+            <div className="absolute inset-0 bg-black/40 dark:bg-black/40 flex justify-center items-center z-20">
+              <div className="w-[90%] md:w-[50%] lg:w-[30%] bg-white dark:bg-[#181818] rounded-xl shadow-xl z-50">
                 <Form
                   type={'expense'}
                   onAdd={(expense) => {
@@ -82,7 +82,7 @@ function Expenses() {
                 
                 <button
                   onClick={() => setShowForm(false)}
-                  className="mt-2 text-red-500 py-[0.6em] px-[1.2em]"
+                  className="mt-2 text-red-300 py-[0.6em] px-[1.2em]"
                 >
                   Cancel
                 </button>
@@ -92,23 +92,23 @@ function Expenses() {
 
           <button
             onClick={() => setShowForm(true)}
-            className="text-white font-black z-50 mb-6 mr-6 bg-[#40798C] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#305B69] rounded-full w-12 h-12 flex items-center justify-center fixed right-4 bottom-4 sm:right-8 sm:bottom-8"
+            className="text-white dark:text-black font-black z-50 mb-6 mr-6 bg-[#40798C] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-[#305B69] rounded-full w-12 h-12 flex items-center justify-center fixed right-4 bottom-4 sm:right-8 sm:bottom-8"
           >
             +
           </button>
 
-          <section className="mt-4">
+          <section className="mt-4 ">
             {expenses.length === 0 ? (
-              <p className="text-gray-600">No expenses yet.</p>
+              <p className="text-gray-300">No expenses yet.</p>
             ) : (
               <ul>
                 {expenses.map((exp) => (
                   <li
                     key={exp._id}
-                    className="bg-white rounded p-3 mb-2 shadow border-red-500 border-r-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2"
+                    className="bg-white dark:bg-[#2b2b2b] rounded p-3 mb-2 shadow border-red-500 border-r-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2"
                   >
                     <span>
-                      <p className='bg-red-300 w-20 text-red-900 rounded-xl px-2 py-1 flex justify-center items-center text-xs'>{exp.category}</p>
+                      <p className='bg-red-300 w-20 text-red-900 rounded-xl px-2 py-1 mb-1 flex justify-center items-center text-xs'>{exp.category}</p>
                       <strong className='ml-1'>{exp.amount} {exp.currency}</strong>
                     </span>
                     <span className='font-light text-sm flex'> 

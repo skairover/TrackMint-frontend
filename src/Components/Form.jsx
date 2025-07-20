@@ -25,13 +25,13 @@ function Form({ onAdd, type }) {
   const categories = type === 'income' ? incomeCategories : expenseCategories;
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col">
+    <form onSubmit={handleSubmit} className="flex flex-col dark:text-black">
       <input
         type="number"
         placeholder="Amount"
         name="amount"
         value={amount}
-        className="p-3 bg-white rounded-xl border border-gray-300 m-3"
+        className="p-3 bg-white dark:bg-gray-300  rounded-xl border border-gray-300 m-3"
         onChange={(e) => setAmount(e.target.value)}
       />
 
@@ -39,11 +39,11 @@ function Form({ onAdd, type }) {
         name="category"
         value={category}
         onChange={(e) => setCategory(e.target.value)}
-        className="p-3 bg-white rounded-xl border border-gray-300 m-3"
+        className="p-3 bg-white dark:bg-gray-300 rounded-xl border border-gray-300 m-3"
       >
         <option value="">Select category</option>
         {categories.map((cat) => (
-          <option key={cat} value={cat}>{cat}</option>
+          <option className='dark:bg-gray-300' key={cat} value={cat}>{cat}</option>
         ))}
       </select>
 
@@ -51,18 +51,18 @@ function Form({ onAdd, type }) {
         name="currency"
         value={currency}
         onChange={(e) => setCurrency(e.target.value)}
-        className="p-3 bg-white rounded-xl border border-gray-300 m-3"
+        className="p-3 bg-white dark:bg-gray-300 rounded-xl border border-gray-300 m-3"
       >
-        <option value="">Select Currency</option>
-        <option value="USD">USD</option>
-        <option value="EU">EU</option>
-        <option value="YEN">YEN</option>
-        <option value="DZD">DZD</option>
+        <option className='dark:bg-gray-300' value="">Select Currency</option>
+        <option className='dark:bg-gray-300' value="USD">USD</option>
+        <option className='dark:bg-gray-300' value="EU">EU</option>
+        <option className='dark:bg-gray-300' value="YEN">YEN</option>
+        <option className='dark:bg-gray-300'value="DZD">DZD</option>
       </select>
 
       <button
         type="submit"
-        className="bg-[#0B2027] text-white rounded-xl m-3 py-[0.6em] px-[1.2em]"
+        className="bg-[#0B2027]  dark:bg-[#40798C] dark:hover:bg-[#0B2027] transition delay-150 duration-300 ease-in-out text-white rounded-xl m-3 py-[0.6em] px-[1.2em]"
       >
         Add {type}
       </button>
