@@ -10,7 +10,7 @@ const AuthLayout = ({ children }) => {
         {/* Branding + Intro */}
         <div className="text-center mb-8">
         <h1 className="text-3xl md:text-4xl font-bold text-[#0B2027] dark:text-[#E5E7EB]">
-          Welcome to <span className="text-[#40798C] dark:text-[#48C072]">TrackMint</span>
+          Welcome to <span className="text-[#48C072] dark:text-[#48C072]">TrackMint</span>
         </h1>
         <p className="text-gray-500 dark:text-gray-400 mt-2">
           Track your finances the smart way

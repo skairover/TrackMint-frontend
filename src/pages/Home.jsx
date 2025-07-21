@@ -11,7 +11,7 @@ const Home = () => {
       <nav className="flex">
         <Link
           to="/login"
-          className="flex items-center justify-center text-black dark:text-white rounded-xl border-2 border-[#48C072] hover:border-[#39995A] py-2 px-6 mx-3 transition duration-300"
+          className="flex items-center justify-center text-black dark:text-white rounded-xl border-2 border-[#48C072] hover:border-[#39995A]  py-2 px-6 mx-3 transition duration-300"
         >
           <span>LogIn</span>
         </Link>
@@ -25,7 +25,7 @@ const Home = () => {
     </header>
 
     {/* Main takes remaining height */}
-    <main className="flex-1 relative overflow-hidden z-0 bg-[#121212]">
+    <main className="flex-1 relative overflow-hidden z-0 bg-white dark:bg-[#121212]">
         <div className="absolute inset-0 z-[-5]" />
         
           <LazySpline3D/>
@@ -38,7 +38,7 @@ const Home = () => {
                     <span>Tired of Wondering</span>
                     <br />
                     <span>
-                        Where Your <strong className='text-[#48C072]/80'>Paycheck</strong> Went?
+                        Where Your <strong className='text-[#48c072] dark:text-[#48C072]/80'>Paycheck</strong> Went?
                     </span>
                 </h1>
                 <p className="mb-3 text-[#363737] dark:text-gray-400 text-base sm:text-lg text-gray-600">

@@ -11,7 +11,7 @@ function Header({ title, setSidebarOpen }) {
 
       {/* Container with full height and border */}
       <div className="h-full  flex items-center px-2">
-        <FaCircleUser className="w-8 h-8 transition invert delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" />
+        <FaCircleUser className="w-8 h-8 transition dark:invert delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110" />
         
       </div>
     </header>

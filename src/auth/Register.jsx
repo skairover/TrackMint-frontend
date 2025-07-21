@@ -63,7 +63,7 @@ function Register() {
         className="w-full bg-gray-200 text-black px-3 py-2 rounded mb-4 outline-none focus:ring-2 focus:ring-blue-500 transition hover:bg-gray-300 dark:hover:bg-gray-300"
       />
 
-      <button className="w-full bg-[#40798C] dark:hover:bg-[#6ecd8f] text-white dark:text-black py-2 rounded-lg hover:bg-[#2C5D66] dark:bg-[#48C072] dark:hover:bg-[#3D7D85] transition duration-300 font-semibold">
+      <button className="w-full bg-[#48C072] dark:hover:bg-[#6ecd8f] text-white dark:text-black py-2 rounded-lg hover:bg-[#32864f] dark:bg-[#48C072] dark:hover:bg-[#3D7D85] transition duration-300 font-semibold">
         Sign Up
       </button>
 

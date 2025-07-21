@@ -113,7 +113,7 @@ function Expenses() {
                     </span>
                     <span className='font-light text-sm flex'> 
                       {formatDate(exp.createdAt)}
-                      <AiOutlineDelete className= 'w-9 h-9 ml-3 cursor-pointer hover:bg-red-200 transition delay-150 duration-300 ease-in-out rounded-xl p-2'
+                      <AiOutlineDelete className= 'w-9 h-9 ml-3 cursor-pointer hover:bg-red-200 dark:hover:bg-red-900 transition delay-150 duration-300 ease-in-out rounded-xl p-2'
                         onClick={()=>handleDeleteExpense(exp._id)}/>
                     </span>
                   </li>
