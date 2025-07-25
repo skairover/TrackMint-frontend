@@ -49,10 +49,6 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               <IncomeIcon className="mr-3" />
               <span>Incomes</span>
             </Link>
-            <Link to="/profile" className="flex items-center hover:text-gray-300">
-              <ProfileIcon className="mr-3" />
-              <span>Profile</span>
-            </Link>
             <Link to="/settings" className="flex items-center hover:text-gray-300">
               <SettingsIcon className="mr-3" />
               <span>Settings</span>

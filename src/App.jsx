@@ -3,7 +3,6 @@ import Register from "./auth/Register";
 import Home from "./pages/Home";
 import Overview from "./pages/Overview";
 import Login from "./auth/Login";
-import Profile from "./pages/Profile";
 import Expenses from "./pages/Expenses";
 import Incomes from "./pages/Incomes";
 import Settings from "./pages/Settings";
@@ -19,7 +18,6 @@ function App() {
           <Route path="/overview" element={<Overview />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/profile" element={<Profile />} />
           <Route path="/expenses" element={<Expenses />} />
           <Route path="/incomes" element={<Incomes />} />
           <Route path="/settings" element={<Settings />} />
