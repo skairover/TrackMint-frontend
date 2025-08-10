@@ -46,8 +46,8 @@ function Overview() {
 
   return (
     <Layout title="Overview">
-      {/* Top summary cards */}
       <section className="p-6">
+        {/* Summary Cards */}
         <div className="flex flex-col md:flex-row w-full justify-between gap-4">
           <div className="flex-1 bg-[#546673] text-white p-5 rounded-xl flex items-center justify-between">
             <span>
@@ -69,36 +69,38 @@ function Overview() {
           </div>
         </div>
       </section>
-
-      {/* Charts */}
-      <section className="p-6 pt-0">
-        <div className="h-[15rem] bg-[#F5F5F5] dark:bg-[#181818] flex flex-col md:flex-row rounded-xl justify-evenly items-center ">
-          <BarChart
-            data={incomeAmounts}
-            label="Monthly Incomes"
-            backgroundColor={['rgba(75, 192, 192, 0.6)',  'rgba(227, 255, 255, 0.6)']}
-
-          />
-        
-
-          <BarChart
-            data={expenseAmounts}
-            label="Monthly Expenses"
-            backgroundColor={['rgba(255, 99, 132, 0.6)', 'rgba(255, 227, 227, 0.6)']}
-
-          />
-        </div>
-
         {/* Buttons */}
-        <div>
-          <button className="text-white rounded-xl mt-6 mr-4 bg-[#40798C] transition hover:-translate-y-1 hover:scale-105 hover:bg-[#305B69] py-2 px-4">
-            Add Expense
-          </button>
-          <button className="text-white rounded-xl mt-6 bg-[#40798C] transition hover:-translate-y-1 hover:scale-105 hover:bg-[#305B69] py-2 px-4">
+        <div className="flex flex-col md:flex-row gap-4 my-2 mx-5"> 
+          <button className=" text-white rounded-xl border border-[#40798C] hover:border-[#305B69] py-2 px-4 ">
             Add Income
           </button>
+          <button className=" text-white rounded-xl border border-[#40798C] hover:border-[#305B69] py-2 px-4 ">
+            Add Expense
+          </button>
+
         </div>
+      {/* Charts */}
+      <section className="p-6">
+        <div className="flex flex-col lg:flex-row gap-4 bg-[#F5F5F5] dark:bg-[#181818] rounded-xl p-4 items-center justify-evenly">
+          <div className="w-full lg:w-1/2">
+            <BarChart
+              data={incomeAmounts}
+              label="Monthly Incomes"
+              backgroundColor={['rgba(75, 192, 192, 0.6)',  'rgba(227, 255, 255, 0.6)']}
+            />
+          </div>
+          <div className="w-full lg:w-1/2">
+            <BarChart
+              data={expenseAmounts}
+              label="Monthly Expenses"
+              backgroundColor={['rgba(255, 99, 132, 0.6)', 'rgba(255, 227, 227, 0.6)']}
+            />
+          </div>
+        </div>
+
+
       </section>
+
     </Layout>
   );
 }
