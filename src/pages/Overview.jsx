@@ -72,7 +72,7 @@ function Overview() {
 
       {/* Charts */}
       <section className="p-6 pt-0">
-        <div className="h-[15rem] bg-[#F5F5F5] dark:bg-[#181818] flex rounded-xl justify-evenly items-center ">
+        <div className="h-[15rem] bg-[#F5F5F5] dark:bg-[#181818] flex flex-col md:flex-row rounded-xl justify-evenly items-center ">
           <BarChart
             data={incomeAmounts}
             label="Monthly Incomes"
