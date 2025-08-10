@@ -83,16 +83,16 @@ function Overview() {
       <section className="p-6">
         <div className="flex flex-col lg:flex-row gap-4 bg-[#F5F5F5] dark:bg-[#181818] rounded-xl p-4 items-center justify-evenly">
           <div className="w-full lg:w-1/2">
+            <p className='text-zinc-400 mb-6'>Monthly Incomes</p>
             <BarChart
               data={incomeAmounts}
-              label="Monthly Incomes"
               backgroundColor={['rgba(75, 192, 192, 0.6)',  'rgba(227, 255, 255, 0.6)']}
             />
           </div>
           <div className="w-full lg:w-1/2">
+            <p className='text-zinc-400 mb-6'>Monthly Expenses</p>
             <BarChart
               data={expenseAmounts}
-              label="Monthly Expenses"
               backgroundColor={['rgba(255, 99, 132, 0.6)', 'rgba(255, 227, 227, 0.6)']}
             />
           </div>

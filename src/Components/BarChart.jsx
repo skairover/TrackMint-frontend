@@ -13,7 +13,7 @@ import {
 // Register Chart.js components
 ChartJS.register(BarController, BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
 
-function BarChart({ data, label, backgroundColor }) {
+function BarChart({ data,  backgroundColor }) {
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
 
@@ -29,7 +29,6 @@ function BarChart({ data, label, backgroundColor }) {
       data: {
         labels:['Jan', 'Fev', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [{
-          label,
           data,
           backgroundColor: backgroundColor,
           borderWidth: 1
@@ -38,14 +37,16 @@ function BarChart({ data, label, backgroundColor }) {
       options: {
         responsive: true,
         plugins: {
-          legend: { position: 'top' }
+          legend: {
+            display: false
+          }
         },
         scales: {
           y: { beginAtZero: true }
         }
       }
     });
-  }, [backgroundColor, data, label]);
+  }, [backgroundColor, data]);
 
   return <canvas ref={chartRef}></canvas>;
 }
