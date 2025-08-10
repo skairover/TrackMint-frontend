@@ -25,15 +25,15 @@ const Home = () => {
     </header>
 
     {/* Main takes remaining height */}
-    <main className="flex-1 relative overflow-hidden z-0 bg-white dark:bg-[#121212]">
+    <main className="flex-1 relative overflow-hidden z-0 bg-white dark:bg-[#121212] px-10">
         <div className="absolute inset-0 z-[-5]" />
         
           <LazySpline3D/>
         
         
-        <section className="flex flex-col items-center justify-center h-full w-full">
-        <div className="flex flex-col items-center justify-between h-[25rem]">
-            <div className="text-center">
+        <section className="flex flex-col items-start justify-center h-full w-full ">
+        <div className="flex flex-col items-start justify-between h-[25rem] w-[30rem]">
+            <div className="text-start">
                 <h1 className="mb-3 text-black dark:text-white leading-tight text-4xl sm:text-5xl font-bold">
                     <span>Tired of Wondering</span>
                     <br />

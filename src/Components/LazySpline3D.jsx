@@ -11,8 +11,7 @@ export default function LazySpline3D() {
     <div ref={ref}>
       {inView && (
         <Suspense fallback={null}>
-          <div className='w-full h-[500px] hidden md:block -z-1 opacity-40 md:opacity-100 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-             md:top-auto md:left-auto md:-bottom-60 md:-right-250 md:transform-none'>
+          <div className='w-full h-[800px] hidden md:block -z-1  md:opacity-100 absolute left-64 -bottom-18'>
             <Spline scene="https://prod.spline.design/5qAOo2IHrhsF6yTd/scene.splinecode" />
           </div>
         </Suspense>
