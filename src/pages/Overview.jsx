@@ -76,12 +76,16 @@ function Overview() {
           <BarChart
             data={incomeAmounts}
             label="Monthly Incomes"
+            backgroundColor={['rgba(75, 192, 192, 0.6)',  'rgba(227, 255, 255, 0.6)']}
+
           />
         
 
           <BarChart
             data={expenseAmounts}
             label="Monthly Expenses"
+            backgroundColor={['rgba(255, 99, 132, 0.6)', 'rgba(255, 227, 227, 0.6)']}
+
           />
         </div>
 

@@ -13,7 +13,7 @@ import {
 // Register Chart.js components
 ChartJS.register(BarController, BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
 
-function BarChart({ data, label }) {
+function BarChart({ data, label, backgroundColor }) {
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
 
@@ -31,7 +31,7 @@ function BarChart({ data, label }) {
         datasets: [{
           label,
           data,
-          backgroundColor: ['rgba(75, 192, 192, 0.6)',  'rgba(227, 255, 255, 0.6)'], 
+          backgroundColor: backgroundColor,
           borderWidth: 1
         }]
       },
@@ -45,7 +45,7 @@ function BarChart({ data, label }) {
         }
       }
     });
-  }, [ data, label]);
+  }, [backgroundColor, data, label]);
 
   return <canvas ref={chartRef}></canvas>;
 }
