@@ -75,14 +75,15 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               <HouseRealEstate className="mr-3" />
               <span>Overview</span>
             </Link>
-            <Link to="/expenses" className="flex items-center hover:text-gray-300">
-              <ExpensesIcon className="mr-3" />
-              <span>Expenses</span>
-            </Link>
             <Link to="/incomes" className="flex items-center hover:text-gray-300">
               <IncomeIcon className="mr-3" />
               <span>Incomes</span>
             </Link>
+            <Link to="/expenses" className="flex items-center hover:text-gray-300">
+              <ExpensesIcon className="mr-3" />
+              <span>Expenses</span>
+            </Link>
+
             <Link to="/settings" className="flex items-center hover:text-gray-300">
               <SettingsIcon className="mr-3" />
               <span>Settings</span>

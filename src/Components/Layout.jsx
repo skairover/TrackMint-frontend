@@ -10,10 +10,10 @@ function Layout({ title, children }) {
     <div className="flex h-full w-screen overflow-x-hidden">
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       
-      <div className="flex-1 flex flex-col text-black h-screen">
+      <div className="flex-1 flex flex-col text-black w-full h-screen ">
         <Header title={title} setSidebarOpen={setSidebarOpen} />
         
-        <main className="flex-1 bg-gray-200 dark:bg-[#121212] overflow-x-scroll h-full p-4 sm:p-6">
+        <main className="flex-1 bg-gray-200 dark:bg-[#121212] overflow-x-scroll w-full h-full p-4 sm:p-6">
           {children}
         </main>
       </div>
