@@ -32,17 +32,18 @@ const Home = () => {
         
         
         <section className="flex flex-col items-start justify-center h-full w-full ">
-        <div className="flex flex-col items-start justify-between h-[25rem] w-[30rem]">
+        <div className="flex flex-col items-start justify-between h-auto max-w-full">
             <div className="text-start">
-                <h1 className="mb-3 text-black dark:text-white leading-tight text-4xl sm:text-5xl font-bold">
-                    <span>Tired of Wondering</span>
-                    <br />
-                    <span>
-                        Where Your <strong className='text-[#48c072] dark:text-[#48C072]/80'>Paycheck</strong> Went?
-                    </span>
-                </h1>
+              <h1 className="mb-3 text-black dark:text-white leading-tight whitespace-normal 
+                            text-[clamp(1.5rem,5vw,3rem)] font-bold max-w-full">
+                <span>Tired of Wondering</span>
+                <br />
+                <span>
+                  Where Your <br /> <strong className="text-[#48c072] dark:text-[#48C072]/80">Paycheck</strong> Went?
+                </span>
+              </h1>
                 <p className="mb-3 text-[#363737] dark:text-gray-400 text-base sm:text-lg text-gray-600">
-                    <span>Track your spending effortlessly and finally see where every penny goes</span>
+                    <span>Track your spending effortlessly and finally <br /> see where every penny goes</span>
                     <br />
                     <span>all in one clean, simple dashboard.</span>
                 </p>

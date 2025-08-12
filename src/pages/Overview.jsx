@@ -3,6 +3,7 @@ import Layout from '../Components/Layout';
 import toast from 'react-hot-toast';
 import api from '../services/api';
 import YearlyBarChart from '../Components/YearlyBarChart';
+import WeeklyBarChart from '../Components/WeeklyBarChart';
 
 function Overview() {
   const [totalIncome, setTotalIncome] = useState(0);
@@ -96,6 +97,26 @@ function Overview() {
           <div className="w-full lg:w-1/2">
             <p className='text-zinc-400 mb-6'>Last Year Expenses</p>
             <YearlyBarChart
+              items={expenses}
+              backgroundColor={['rgba(255, 99, 132, 0.6)', 'rgba(255, 227, 227, 0.6)']}
+            />
+          </div>
+        </div>
+      </section>
+       
+
+       <section className="p-6">
+        <div className="flex flex-col lg:flex-row gap-4 bg-[#F5F5F5] dark:bg-[#181818] rounded-xl p-4 items-center justify-evenly">
+          <div className="w-full lg:w-1/2">
+            <p className='text-zinc-400 mb-6'>Last Week Incomes</p>
+            <WeeklyBarChart
+              items={incomes}
+              backgroundColor={['rgba(75, 192, 192, 0.6)',  'rgba(227, 255, 255, 0.6)']}
+            />
+          </div>
+          <div className="w-full lg:w-1/2">
+            <p className='text-zinc-400 mb-6'>Last Week Expenses</p>
+            <WeeklyBarChart
               items={expenses}
               backgroundColor={['rgba(255, 99, 132, 0.6)', 'rgba(255, 227, 227, 0.6)']}
             />
